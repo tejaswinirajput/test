@@ -1,0 +1,144 @@
+<!------ Include the above in your HEAD tag ---------->
+
+
+<!DOCTYPE html><html lang='en' class=''>
+<head>
+  <!--<script src="https://kit.fontawesome.com/f75621122b.js"></script>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styling.css')}}">
+  <script src="https://kit.fontawesome.com/f75621122b.js"></script>
+  <!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/tobewan77/pen/xrwGdy?limit=all&page=4&q=nav+tabs" />
+
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'><link rel='stylesheet prefetch' href='https://www.jqueryscript.net/demo/jQuery-Plugin-To-Create-Responsive-Scrolling-Bootstrap-Tabs/jquery.scrolling-tabs.css'><link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic'><link rel='stylesheet prefetch' href='https://www.bts.com/fonts/digital-icons/style.css'>
+<link rel='stylesheet' type='text/css' href='{{ url_for('static', filename='styling.css')}}'>
+<style class="cp-pen-styles">
+body {
+  color: #6d747e;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.5em;
+  background-image: url('https://pic.i7lm.com/wp-content/uploads/2019/05/%D8%A7%D8%AC%D9%85%D9%84-%D9%81%D9%8A%D8%B3%D8%A7%D8%AA-%D8%A7%D9%84%D9%88%D8%A7%D8%AA%D8%B3-780x405.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  }
+
+.center {
+padding-top: 10%;
+ display: inline-block
+position: relative;
+text-align: center;
+color: black;
+padding-bottom:5%
+}
+
+.emotion {
+ display: inline-block
+position: relative;
+text-align: center;
+color: black;
+padding-bottom: 10%;
+}
+
+
+.emotion1 {
+ display: inline-block
+position: relative;
+text-align: center;
+color: black;
+padding-bottom: 5%;
+}
+
+h2 span{
+display: inline-block
+position: relative;
+text-align: center;
+color: black;
+padding-bottom: 5%;
+}
+
+h1 span{
+padding-right: 20%
+background-color: white;
+text-align: center;
+color: black;
+}
+
+input{
+position:absolute
+left: 150px;
+}
+
+.circle{
+background-color: white;
+border-radius: 800%;
+width: 300%
+height:50%
+}
+
+.rectangle{
+background-color: powderblue;
+ margin: auto;
+width: 50%;
+
+  padding: 10px;
+}
+</style>
+
+</head><body>
+<div class="container tall">
+<div class="circle">
+
+<!-- Background image -->
+                <h2 id="App_message" class="center">Check your Sentiment!</h2>
+
+	      <!-----------------Sentiment Analysis Code Start Here-------------------------->
+	   <div class= "emotion1">
+			<h2><span>Enter the Text to get the Sentiment</span></h2>
+             <form action="/sentiment_analysis_prediction" method="post" enctype="multipart/form-data">
+             <input name = "text" placeholder = "Text" size="100">
+             <input type="submit">
+             </form>
+             
+  <!--Sentiment -->       
+          <h1 class=h1 span"><span>Sentiment</span></h1>
+          <div class="rectangle">
+
+            {% if probability %}
+              {{ sentiment }}
+               {% endif %}
+          </div>
+  <!--Sentiment --> 
+  <!--Probability -->
+          <h1><span>Probability</span></h1>
+          <div class="rectangle">
+            {% if probability %}
+              {{ probability }}
+               {% endif %}       
+          </div>
+   </div>
+  <!--Probability -->
+  <!--Image -->
+          <div class="emotion1">
+             {% if probability %}
+                <h1 class="emotion1"><span>Emotion</span></h1>
+                <h2 class="emotion"><span><img src="{{ image }}" alt="Image"></span></h2>
+              {% endif %}
+          </div>
+  <!--Image-->
+      </div>
+      <!-------------Sentiment Analysis Code End------------------------->
+	
+</div>
+</div>
+
+
+</body></html>

@@ -1,0 +1,204 @@
+<!--<ul class="nav nav-tabs" role="tablist">
+	  	  <li role="presentation">
+      
+      <a href="#tab2" role="tab" data-toggle="tab">
+        Sentiment Analysis
+      </a>
+    </li>
+   </ul>--!>
+/*digital colors */
+/* reset styles */
+a,
+a:hover {
+  color: initial;
+}
+.container {
+  margin: 2em auto 0 auto;
+}
+.nav-tabs {
+  border: none;
+}
+.nav-tabs>li>a {
+  padding: 0;
+  border: none;
+  background: none;
+}
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover {
+  border: none;
+  background: none;
+}
+.nav-tabs>li>a:hover {
+  background: none;
+  border: none;
+}
+.scrtabs-tabs-fixed-container {
+  height: initial;
+}
+.scrtabs-tabs-fixed-container ul.nav-tabs {
+  height: auto;
+}
+.scrtabs-tabs-fixed-container ul.nav-tabs > li {
+  white-space: initial;
+}
+
+/* end of reset styles */
+
+
+
+
+
+.files input {
+    outline: 2px dashed #92b0b3;
+    outline-offset: -10px;
+    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    padding: 120px 0px 85px 35%;
+    text-align: center !important;
+    margin: 0;
+    width: 100% !important;
+}
+.files input:focus{     outline: 2px dashed #92b0b3;  outline-offset: -10px;
+    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    transition: outline-offset .15s ease-in-out, background-color .15s linear; border:1px solid #92b0b3;
+ }
+.files{ position:relative}
+.files:after {  pointer-events: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 50px;
+    right: 0;
+    height: 56px;
+    content: "";
+    background-image: url(https://image.flaticon.com/icons/png/128/109/109612.png);
+    display: block;
+    margin: 0 auto;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.color input{ background-color:#f1f1f1;}
+.files:before {
+    position: absolute;
+    bottom: 10px;
+    left: 0;  pointer-events: none;
+    width: 100%;
+    right: 0;
+    height: 57px;
+    content: " or drag it here. ";
+    display: block;
+    margin: 0 auto;
+    color: #2ea591;
+    font-weight: 600;
+    text-transform: capitalize;
+    text-align: center;
+}
+.file-field.big .file-path-wrapper {
+height: 3.2rem; }
+.file-field.big .file-path-wrapper .file-path {
+height: 3rem; }
+
+.d {
+  height: 10.2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.noTop {
+  margin-top: 0;
+}
+.tall .nav-tabs li,
+.tall .scrtabs-tab-container {
+  height: 125px;
+}
+.tall .nav-tabs li .scrtabs-tab-scroll-arrow,
+.tall .scrtabs-tab-container .scrtabs-tab-scroll-arrow {
+  height: 123px;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #ddd;
+}
+.tall .nav-tabs li .scrtabs-tab-scroll-arrow .glyphicon,
+.tall .scrtabs-tab-container .scrtabs-tab-scroll-arrow .glyphicon {
+  margin-top: 50px;
+}
+.tall .tab-content {
+  height: calc(100vh - (125px + 4em));
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.tab-content {
+  margin: 0.7em 0;
+}
+.tab-content h2 {
+  color: #80cc28;
+  margin-bottom: 30px;
+}
+.tab-content h3 {
+  color: #434951;
+  font-weight: 600;
+}
+.nav-tabs>li.active {
+  cursor: default;
+  background: #fff;
+  color: #434951;
+  border: 1px solid #ddd;
+  border-top: 5px solid #80cc28;
+  border-bottom-color: transparent;
+}
+.nav-tabs>li {
+  padding: 1em 0.5em 0.5em;
+  border: 1px solid #fff;
+  border-top: 5px solid transparent;
+  border-radius: 0;
+  border-bottom-color: #ddd;
+  margin: 0;
+  min-width: 125px;
+  font-size: 16px;
+  max-width: 200px;
+  white-space: normal;
+  background: #f2f2f2;
+  transition: border-top ease-out 0.3s, background ease-out 0.3s;
+}
+.nav-tabs>li a {
+  color: #a8adb4;
+  transition: color ease-out 0.3s;
+}
+.nav-tabs>li:hover {
+  border-top: 5px solid #a8adb4;
+}
+.nav-tabs>li:hover a {
+  color: #6d747e;
+}
+.nav>li>a {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  line-height: 1.2em;
+  margin: 0;
+}
+.nav-tabs input {
+  position: relative;
+}
+.radiobtn input {
+  display: none;
+}
