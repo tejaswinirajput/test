@@ -30,9 +30,9 @@ python-igraph==0.8.0
 PyYAML==5.1.1
 scikit-learn==0.21.2
 scipy==1.4.1
-tensorboard==1.15.2
-tensorflow==1.15.2
-tensorflow-estimator==1.15.2
+tensorboard==1.15.0
+tensorflow==1.15.0
+tensorflow-estimator==1.15.0
 tensorflow-transform==0.14.0
 webencodings==0.5.1
 Werkzeug==0.15.4
