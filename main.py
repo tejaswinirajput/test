@@ -8,6 +8,12 @@ from numpy import array
 from keras.datasets import imdb
 from keras.preprocessing import sequence
 from keras.models import load_model
+import h5py
+f = h5py.File('my_sentimeter_model.h5','r+')
+data_p = f.attrs['training_config']
+data_p = data_p.decode().replace("learning_rate","lr").encode()
+f.attrs['training_config'] = data_p
+f.close()
 
 IMAGE_FOLDER = os.path.join('static', 'img_pool')
 
@@ -18,10 +24,10 @@ app.config['UPLOAD_FOLDER'] = IMAGE_FOLDER
 def init():
     global model,graph
     # load the pre-trained Keras model
-    model = load_model('my_sentimeter_model.h5')
+    model = load_model('my_sentimeter_model.h5', compile="false")
     model.compile(loss='binary_crossentropy',optimizer='adam')
     model.load_weights('my_sentimeter_weights.h5')
-    graph = tf.get_default_graph()
+    graph = tf.compat.v1.get_default_graph()
 
 #########################Code for Sentiment Analysis
 @app.route('/', methods=['GET', 'POST'])
