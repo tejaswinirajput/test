@@ -32,7 +32,7 @@ PyYAML==5.1.1
 scikit-learn==0.21.2
 scipy==1.4.1
 tensorboard==1.15.0
-tensorflow==1.15.0
+tensorflow==2.6.4
 tensorflow-estimator==1.15.1
 tensorflow-transform==0.14.0
 webencodings==0.5.1
